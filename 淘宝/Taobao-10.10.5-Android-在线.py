@@ -1,5 +1,5 @@
 '''
-@File    :   Taobao-version-Android-在线.py    
+@File    :   Taobao-10.10.5-Android-在线.py
 @APPTYPE :   Android
 @Model   :   Huawei P50
 

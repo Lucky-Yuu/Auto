@@ -1,5 +1,5 @@
 '''
-@File    :   Taobao-version-Android-登录.py    
+@File    :   Taobao-10.10.5-Android-登录.py
 @APPTYPE :   Android
 @Model   :   Huawei P50
 
