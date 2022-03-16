@@ -16,7 +16,7 @@ def logout():
     driver = Taobao.driver
     el1 = driver.find_element(By.XPATH, '//android.widget.FrameLayout[@content-desc="我的淘宝"]')
     el1.click()
-    time.sleep(2)
+    time.sleep(7)
     el2 = driver.find_element(By.XPATH, '//android.view.View[@content-desc="设置"]')
     el2.click()
     time.sleep(2)

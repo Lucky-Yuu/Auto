@@ -33,6 +33,7 @@ def login():
             break
         except:
             times += 1
+            time.sleep(2)
             el5 = driver.find_element(By.XPATH, '//android.view.View[@content-desc="设置"]')
             el5.click()
             time.sleep(2)
