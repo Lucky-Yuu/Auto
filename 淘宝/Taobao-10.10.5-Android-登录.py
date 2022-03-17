@@ -14,9 +14,18 @@ import Taobao_Base as Taobao
 
 def login():
     driver = Taobao.driver
-    el1 = driver.find_element(By.XPATH, '//android.widget.FrameLayout[@content-desc="我的淘宝"]')
-    el1.click()
-    time.sleep(2)
+    el1_times = 0
+    while el1_times < 3:
+        try:
+            el1 = driver.find_element(By.XPATH, '//android.widget.FrameLayout[@content-desc="我的淘宝"]')
+            el1.click()
+            time.sleep(2)
+            break
+        except:
+            el = driver.find_element(By.XPATH, '//android.widget.ImageView[@content-desc="关闭按钮"]')
+            el.click()
+            time.sleep(2)
+            el1_times += 1
     times = 0
     while times < 5:
 
