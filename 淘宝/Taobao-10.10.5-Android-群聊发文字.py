@@ -1,19 +1,18 @@
 '''
-@File    :   Taobao-10.10.5-Android-私聊发语音.py    
+@File    :   Taobao-10.10.5-Android-群聊发文字.py    
 @APPTYPE :   Android
 @Model   :   Huawei P50
 
 @Modify Time      @Author    @Version    @Action
 ------------      -------    --------    -----------
-2022/3/17 14:50   xyhu       10.10.5     None
+2022/3/17 15:35   xyhu       10.10.5     479
 '''
 import time
-from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.common.by import By
 import Taobao_Base as Taobao
 
 
-def send_voice():
+def group_send_msg():
     driver = Taobao.driver
     el1_times = 0
     while el1_times < 3:
@@ -30,24 +29,17 @@ def send_voice():
     el3 = driver.find_element(By.XPATH, '//android.widget.TextView[@content-desc="联系人"]')
     el3.click()
     time.sleep(2)
-    el4 = driver.find_element(By.XPATH, '//android.view.View[@content-desc="A测试"]')
+    el4 = driver.find_element(By.XPATH, '//android.view.View[@content-desc="群聊"]')
     el4.click()
     time.sleep(2)
-    el5 = driver.find_element(By.XPATH, '//android.view.View[@content-desc="发消息"]')
+    el5 = driver.find_element(By.XPATH, '//android.widget.TextView[@text="A测试"]')
     el5.click()
     time.sleep(2)
-    el6_times = 0
-    while el6_times < 3:
-        try:
-            el6 = driver.find_element(By.XPATH, '//android.widget.FrameLayout[@content-desc="语音"]')
-            el6.click()
-            time.sleep(2)
-            el7 = driver.find_element(By.XPATH, '//android.widget.Button[@text="按住 说话"]')
-            TouchAction(driver).long_press(el7, duration=3000).wait(3000).perform()
-            time.sleep(5)
-            break
-        except:
-            el6_times += 1
+    el6 = driver.find_element(By.ID, 'com.taobao.taobao:id/msgcenter_panel_input_edit')
+    el6.send_keys("测试test1234")
+    el7 = driver.find_element(By.XPATH, '//android.widget.RelativeLayout[@content-desc="发送"]')
+    el7.click()
+    time.sleep(2)
 
 
-send_voice()
+group_send_msg()
