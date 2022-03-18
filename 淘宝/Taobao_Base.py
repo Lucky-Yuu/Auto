@@ -19,7 +19,7 @@ deviceAndroidVersion = list(os.popen('adb shell getprop ro.build.version.release
 deviceVersion = re.findall(r'^\w*\b', deviceAndroidVersion[0])[0]
 server = 'http://localhost:4723/wd/hub'
 # 配置参数集合
-#主设备
+# 主设备
 desired_caps = {
     'platformName': 'Android',  # 系统平台的名称
     'platformVersion': deviceVersion,  # 设备系统版本号
@@ -36,10 +36,6 @@ desired_caps = {
 
 driver = webdriver.Remote(server, desired_caps)
 time.sleep(5)
-taobao_account={
-    'username': '',
-    'password': 'huxinyu123..'
-}
 
 def get_size():
     width = driver.get_window_size()['width']

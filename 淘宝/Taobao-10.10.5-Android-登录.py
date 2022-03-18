@@ -10,6 +10,7 @@
 import time
 from selenium.webdriver.common.by import By
 import Taobao_Base as Taobao
+import Taobao_Devices
 
 
 def login():
@@ -31,7 +32,7 @@ def login():
 
         try:
             el2 = driver.find_element(By.XPATH, '//android.widget.EditText[@text=" 请输入密码"]')
-            el2.send_keys(Taobao.taobao_account['password'])
+            el2.send_keys(Taobao_Devices.taobao_account_a['password'])
             time.sleep(2)
             el3 = driver.find_element(By.XPATH, '//android.widget.Button[@text="登录"]')
             el3.click()

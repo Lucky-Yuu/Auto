@@ -1,18 +1,18 @@
 '''
-@File    :   Taobao-10.10.5-Android-私聊收文字.py    
+@File    :   Taobao-10.10.5-Android-私聊收图片.py    
 @APPTYPE :   Android
 @Model   :   Huawei P50
 
 @Modify Time      @Author    @Version    @Action
 ------------      -------    --------    -----------
-2022/3/17 10:27   xyhu       10.10.5     476
+2022/3/18 16:21   xyhu       10.10.5     762
 '''
 import time
 from appium import webdriver
 from selenium.webdriver.common.by import By
 import Taobao_Devices as Taobao
 
-def rec_msg():
+def rec_pic():
     a_driver = webdriver.Remote(Taobao.server_a, Taobao.desired_caps_a)
     b_driver = webdriver.Remote(Taobao.server_b, Taobao.desired_caps_b)
     a_el1_times = 0
@@ -57,11 +57,27 @@ def rec_msg():
     b_el5 = b_driver.find_element(By.XPATH, '//android.view.View[@content-desc="发消息"]')
     b_el5.click()
     time.sleep(2)
-    b_el6 = b_driver.find_element(By.ID, 'com.taobao.taobao:id/msgcenter_panel_input_edit')
-    b_el6.send_keys("测试test1234")
+    b_el6 = b_driver.find_element(By.XPATH, '//android.widget.FrameLayout[@content-desc="功能面板"]')
+    b_el6.click()
     time.sleep(2)
-    b_el7 = b_driver.find_element(By.XPATH, '//android.widget.RelativeLayout[@content-desc="发送"]')
+    b_el7 = b_driver.find_element(By.XPATH, '//android.widget.TextView[@text="拍照"]')
     b_el7.click()
     time.sleep(2)
+    b_el8_times = 0
+    while b_el8_times < 3:
+        try:
+            b_el8 = b_driver.find_element(By.XPATH, '//android.widget.ImageView[@content-desc="拍照"]')
+            b_el8.click()
+            time.sleep(5)
+            break
+        except:
+            b_el9 = b_driver.find_element(By.XPATH, '//android.widget.Button[@text="仅使用期间允许"]')  # 第一次需授权
+            b_el9.click()
+            time.sleep(2)
+            b_el8_times += 1
+    b_el10 = b_driver.find_element(By.XPATH, '//android.widget.ImageView[@content-desc="确定"]')
+    b_el10.click()
+    time.sleep(3)
 
-rec_msg()
+
+rec_pic()
