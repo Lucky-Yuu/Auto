@@ -27,10 +27,10 @@ desired_caps = {
     'appPackage': 'com.taobao.taobao',  # 包名
     'appActivity': 'com.taobao.tao.TBMainActivity',  # 启动入口
     'automationName': 'Uiautomator2',  # 自动化测试引擎
-    'unicodeKeyboard': False,
-    'resetKeyboard': False,
+    'unicodeKeyboard': True,
+    'resetKeyboard': True,
     'noReset': True,  # 是否重置应用
-    'newCommandTimeout': '60',
+    'newCommandTimeout': '180',
     'androidDeviceReadyTimeout': '3600'
 }
 

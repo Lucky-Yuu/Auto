@@ -16,10 +16,10 @@ desired_caps_a = {
     'appPackage': 'com.taobao.taobao',  # 包名
     'appActivity': 'com.taobao.tao.TBMainActivity',  # 启动入口
     'automationName': 'Uiautomator2',  # 自动化测试引擎
-    'unicodeKeyboard': False,
-    'resetKeyboard': False,
+    'unicodeKeyboard': True,
+    'resetKeyboard': True,
     'noReset': True,  # 是否重置应用
-    'newCommandTimeout': '60',
+    'newCommandTimeout': '180',
     'androidDeviceReadyTimeout': '3600'
 }
 #副设备
@@ -30,10 +30,10 @@ desired_caps_b = {
     'appPackage': 'com.taobao.taobao',  # 包名
     'appActivity': 'com.taobao.tao.TBMainActivity',  # 启动入口
     'automationName': 'Uiautomator2',  # 自动化测试引擎
-    'unicodeKeyboard': False,
-    'resetKeyboard': False,
+    'unicodeKeyboard': True,
+    'resetKeyboard': True,
     'noReset': True,  # 是否重置应用
-    'newCommandTimeout': '60',
+    'newCommandTimeout': '180',
     'androidDeviceReadyTimeout': '3600'
 }
 
