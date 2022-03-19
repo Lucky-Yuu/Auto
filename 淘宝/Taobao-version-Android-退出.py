@@ -27,6 +27,8 @@ def logout():
     el4 = driver.find_element(By.XPATH, '//android.widget.Button[@text="直接退出"]')
     el4.click()
     time.sleep(2)
+    driver.close_app()
+    driver.quit()
 
 
 logout()
