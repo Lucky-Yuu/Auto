@@ -37,8 +37,8 @@ desired_caps = {
     'appPackage': 'com.baidu.netdisk',  # 包名
     'appActivity': 'com.baidu.netdisk.ui.DefaultMainActivity',  # 启动入口
     'automationName': 'Uiautomator2',  # 自动化测试引擎
-    'unicodeKeyboard': True,
-    'resetKeyboard': True,
+    'unicodeKeyboard': False,
+    'resetKeyboard': False,
     'noReset': True,  # 是否重置应用
     'newCommandTimeout': '180',
     'androidDeviceReadyTimeout': '3600'

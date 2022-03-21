@@ -14,9 +14,18 @@ import 百度网盘_Base as BaiDuDisk
 
 def userinfo():
     driver = BaiDuDisk.driver
-    el1 = driver.find_element(By.ID, 'com.baidu.netdisk:id/rb_about_me')
-    el1.click()
-    time.sleep(2)
+    el1_times = 0
+    while el1_times < 3:
+        try:
+            el1 = driver.find_element(By.ID, 'com.baidu.netdisk:id/rb_about_me')
+            el1.click()
+            time.sleep(2)
+            break
+        except:
+            el = driver.find_element(By.ID, 'com.baidu.netdisk:id/iv_close')
+            el.click()
+            time.sleep(2)
+            el1_times += 1
     BaiDuDisk.swipe_up(20)
     BaiDuDisk.swipe_up(20)
     el2 = driver.find_element(By.XPATH, '//android.widget.TextView[@text="设置"]')
