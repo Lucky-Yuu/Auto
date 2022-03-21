@@ -9,11 +9,11 @@
 '''
 # 该账号需在安全设备登录，即已登录过的设备
 baidu_account = {
-    'username': '17625056788',
-    'password': '1.2.3..@'
+    'username': '',
+    'password': ''
 }
 friend = {
-    'username': '13951457473'  # 被添加的账号
+    'username': ''  # 被添加的账号
 }
 # 主设备
 desired_caps_a = {
