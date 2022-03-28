@@ -13,8 +13,15 @@ from selenium.webdriver.common.by import By
 import 抖音_Base as DouYin
 
 def logout():
-    driver = DouYin.driver()
-    TouchAction(driver).tap(x=600, y=1268).perform()
+    driver = DouYin.driver
+    try:
+        el = driver.find_element(By.XPATH,'//android.widget.Button[@text="我知道了"]')
+        el.click()
+        time.sleep(2)
+    except:
+        pass
+    finally:
+        TouchAction(driver).tap(x=600, y=1268).perform().release()
     time.sleep(3)
     el1 = driver.find_element(By.XPATH,'//android.widget.TextView[@content-desc="我，按钮"]')
     el1.click()
@@ -24,7 +31,7 @@ def logout():
     time.sleep(2)
     el3 = driver.find_element(By.XPATH,'//android.widget.TextView[@text="设置"]')
     el3.click()
-    time.sleep(3)
+    time.sleep(5)
     DouYin.swipe_up(20)
     el4 = driver.find_element(By.XPATH,'//android.widget.TextView[@text="退出登录"]')
     el4.click()
