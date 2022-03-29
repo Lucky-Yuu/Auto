@@ -30,16 +30,15 @@ def add_friend():
     el2 = driver.find_element(By.XPATH, '//android.widget.TextView[@text="添加朋友"]')
     el2.click()
     time.sleep(3)
-    el3 = driver.find_element(By.XPATH,'//android.widget.EditText[@text="搜索用户名字/抖音号"]')
+    el3 = driver.find_element(By.XPATH, '//android.widget.EditText[@text="搜索用户名字/抖音号"]')
     el3.click()
     el3.send_keys("橙子")
-    el4 = driver.find_element(By.XPATH,'//android.widget.TextView[@text="搜索"]')
+    el4 = driver.find_element(By.XPATH, '//android.widget.TextView[@text="搜索"]')
     el4.click()
     time.sleep(2)
     el5 = driver.find_element(By.XPATH, '(//android.widget.TextView[@text="关注"])[1]')
     el5.click()
     time.sleep(2)
-
 
 
 add_friend()
