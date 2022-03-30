@@ -10,7 +10,8 @@
 # 该账号需在安全设备登录，即已登录过的设备
 douyin_account = {
     'username': '17625056788',
-    'password': 'huxinyu123..'
+    'password': 'huxinyu123..',
+    'pay_password':'980097'
 }
 friend = {
     'username': ''  # 被添加的账号

@@ -56,7 +56,7 @@ def group_send_location():
             el7_times += 1
     el9 = driver.find_element(By.XPATH, '//android.widget.TextView[@text="发送"]')
     el9.click()
-    time.sleep(2)
+    time.sleep(5)
 
 
 group_send_location()

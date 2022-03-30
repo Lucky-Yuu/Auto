@@ -30,7 +30,7 @@ def send_video():
     el2 = driver.find_element(By.XPATH, '//android.widget.ImageView[@content-desc="创建群聊"]')
     el2.click()
     time.sleep(2)
-    el3 = driver.find_element(By.XPATH, '//android.widget.TextView[@content-desc="A测试"]')
+    el3 = driver.find_element(By.XPATH, '//android.widget.TextView[@text="A测试"]')
     el3.click()
     time.sleep(2)
     el4 = driver.find_element(By.XPATH, '//android.widget.Button[@text="发起聊天"]')
@@ -47,7 +47,7 @@ def send_video():
         try:
             el7 = driver.find_element(By.ID, 'com.ss.android.ugc.aweme:id/k1x')
             TouchAction(driver).long_press(el7, duration=3000).wait(3000).perform()
-            time.sleep(4)
+            time.sleep(5)
             break
         except:
             el8 = driver.find_element(By.XPATH, '//android.widget.Button[@text="仅使用期间允许"]')  # 第一次需授权
@@ -56,7 +56,7 @@ def send_video():
             el7_times += 1
     el9 = driver.find_element(By.XPATH, '//android.widget.TextView[@text="发送"]')
     el9.click()
-    time.sleep(2)
+    time.sleep(5)
 
 
 send_video()

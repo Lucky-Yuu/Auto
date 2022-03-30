@@ -44,7 +44,7 @@ def group_send_voice():
             time.sleep(2)
             el6 = driver.find_element(By.XPATH, '//android.widget.TextView[@text="按住 说话"]')
             TouchAction(driver).long_press(el6, duration=3000).wait(3000).perform()
-            time.sleep(4)
+            time.sleep(5)
             break
         except:
             el7 = driver.find_element(By.XPATH, '//android.widget.Button[@text="仅使用期间允许"]')  # 第一次需授权

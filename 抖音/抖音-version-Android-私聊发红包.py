@@ -11,6 +11,7 @@ import time
 from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.common.by import By
 import 抖音_Base as DouYin
+import 抖音_Devices as Devices
 
 
 def send_red_env():
@@ -30,7 +31,7 @@ def send_red_env():
     el2 = driver.find_element(By.XPATH, '//android.widget.ImageView[@content-desc="创建群聊"]')
     el2.click()
     time.sleep(2)
-    el3 = driver.find_element(By.XPATH, '//android.widget.TextView[@content-desc="A测试"]')
+    el3 = driver.find_element(By.XPATH, '//android.widget.TextView[@text="A测试"]')
     el3.click()
     time.sleep(2)
     el4 = driver.find_element(By.XPATH, '//android.widget.Button[@text="发起聊天"]')
@@ -42,19 +43,23 @@ def send_red_env():
     el6 = driver.find_element(By.XPATH, '//android.widget.TextView[@text="红包"]')
     el6.click()
     time.sleep(2)
-    el7 = driver.find_element(By.XPATH, '//android.widget.TextView[@text="0.00"]')
+    el7 = driver.find_element(By.ID, 'com.ss.android.ugc.aweme:id/edit_text')
     el7.send_keys("0.01")
     el8 = driver.find_element(By.XPATH, '//android.widget.EditText[@text="大吉大利"]')
     el8.send_keys("测试test1234")
     el9 = driver.find_element(By.XPATH, '//android.widget.TextView[@text="发红包"]')
     el9.click()
     time.sleep(2)
-    el10 = driver.find_element(By.XPATH, '//android.widget.TextView[contains(@text."抖音零钱")]')
+    el10 = driver.find_element(By.XPATH, '//android.widget.TextView[contains(@text,"抖音零钱")]')
     el10.click()
     time.sleep(2)
     el11 = driver.find_element(By.XPATH, '//android.widget.TextView[@text="确认支付"]')
     el11.click()
     time.sleep(2)
-
+    for i in Devices.douyin_account['pay_password']:
+        el12 = driver.find_element(By.XPATH,'//android.widget.TextView[@text="'+i+'"]')
+        el12.click()
+        time.sleep(1)
+    time.sleep(3)
 
 send_red_env()

@@ -30,7 +30,7 @@ def send_msg():
     el2 = driver.find_element(By.XPATH, '//android.widget.ImageView[@content-desc="创建群聊"]')
     el2.click()
     time.sleep(2)
-    el3 = driver.find_element(By.XPATH, '//android.widget.TextView[@content-desc="A测试"]')
+    el3 = driver.find_element(By.XPATH, '//android.widget.TextView[@text="A测试"]')
     el3.click()
     time.sleep(2)
     el4 = driver.find_element(By.XPATH, '//android.widget.Button[@text="发起聊天"]')
