@@ -29,7 +29,7 @@ def login():
     time.sleep(3)
     TouchAction(driver).tap(x=600, y=1268).perform().release()
     time.sleep(3)
-    el3 = driver.find_element(By.XPATH, '//android.widget.TextView[@content-desc="我，按钮"]')
+    el3 = driver.find_element(By.XPATH, '//*[@resource-id="com.ss.android.ugc.aweme:id/root_view"]/android.widget.FrameLayout[5]')
     el3.click()
     time.sleep(3)
     el4 = driver.find_element(By.XPATH, '//android.widget.TextView[@text="密码登录"]')

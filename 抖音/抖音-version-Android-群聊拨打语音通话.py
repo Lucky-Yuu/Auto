@@ -28,7 +28,7 @@ def group_call_voice():
     except:
         TouchAction(driver).tap(x=600, y=1268).perform().release()
     time.sleep(3)
-    el1 = driver.find_element(By.XPATH, '//android.widget.TextView[@content-desc="消息，按钮"]')
+    el1 = driver.find_element(By.XPATH, '//*[@resource-id="com.ss.android.ugc.aweme:id/root_view"]/android.widget.FrameLayout[4]')
     el1.click()
     time.sleep(3)
     el2 = driver.find_element(By.XPATH, '//android.widget.ImageView[@content-desc="创建群聊"]')

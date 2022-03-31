@@ -30,7 +30,7 @@ def group_rec_pic():
     except:
         TouchAction(a_driver).tap(x=600, y=1268).perform().release()
     time.sleep(3)
-    a_el1 = a_driver.find_element(By.XPATH, '//android.widget.TextView[@content-desc="消息，按钮"]')
+    a_el1 = a_driver.find_element(By.XPATH, '//*[@resource-id="com.ss.android.ugc.aweme:id/root_view"]/android.widget.FrameLayout[4]')
     a_el1.click()
     time.sleep(3)
     a_el2 = a_driver.find_element(By.XPATH, '//android.widget.ImageView[@content-desc="创建群聊"]')
