@@ -21,13 +21,17 @@ def view_history():
         time.sleep(2)
     except:
         pass
-    finally:
+    try:
+        el0 = driver.find_element(By.XPATH, '//android.view.View[@content-desc="点击进入直播间"]')
+        if el0:
+            time.sleep(2)
+    except:
         TouchAction(driver).tap(x=600, y=1268).perform().release()
     time.sleep(3)
     el1 = driver.find_element(By.XPATH, '//android.widget.TextView[@content-desc="我，按钮"]')
     el1.click()
     time.sleep(3)
-    el2 = driver.find_element(By.ID, 'com.ss.android.ugc.aweme:id/iuk')
+    el2 = driver.find_element(By.XPATH, '//android.widget.ImageView[@content-desc="更多"]')
     el2.click()
     time.sleep(2)
     el3 = driver.find_element(By.XPATH, '//android.widget.TextView[@text="观看历史"]')

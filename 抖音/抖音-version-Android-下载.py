@@ -21,7 +21,11 @@ def download():
         time.sleep(2)
     except:
         pass
-    finally:
+    try:
+        el0 = driver.find_element(By.XPATH, '//android.view.View[@content-desc="点击进入直播间"]')
+        if el0:
+            time.sleep(2)
+    except:
         TouchAction(driver).tap(x=600, y=1268).perform().release()
     time.sleep(3)
     el1 = driver.find_element(By.XPATH, '//android.widget.LinearLayout[contains(@content-desc,"分享")]')

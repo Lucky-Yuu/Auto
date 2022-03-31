@@ -21,7 +21,11 @@ def send_video():
         time.sleep(2)
     except:
         pass
-    finally:
+    try:
+        el0 = driver.find_element(By.XPATH, '//android.view.View[@content-desc="点击进入直播间"]')
+        if el0:
+            time.sleep(2)
+    except:
         TouchAction(driver).tap(x=600, y=1268).perform().release()
     time.sleep(3)
     el1 = driver.find_element(By.XPATH, '//android.widget.TextView[@content-desc="消息，按钮"]')
@@ -43,14 +47,14 @@ def send_video():
     el6.click()
     time.sleep(2)
     el7_times = 0
-    while el7_times < 3:
+    while el7_times < 5:
         try:
-            el7 = driver.find_element(By.ID, 'com.ss.android.ugc.aweme:id/k1x')
+            el7 = driver.find_element(By.XPATH, '//android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout[3]/android.widget.FrameLayout[3]/android.widget.FrameLayout[2]/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.FrameLayout[1]')
             TouchAction(driver).long_press(el7, duration=3000).wait(3000).perform()
             time.sleep(5)
             break
         except:
-            el8 = driver.find_element(By.XPATH, '//android.widget.Button[@text="仅使用期间允许"]')  # 第一次需授权
+            el8 = driver.find_element(By.XPATH, '//android.widget.Button[contains(@text,"允许")]')  # 第一次需授权
             el8.click()
             time.sleep(2)
             el7_times += 1

@@ -21,7 +21,11 @@ def send_voice():
         time.sleep(2)
     except:
         pass
-    finally:
+    try:
+        el0 = driver.find_element(By.XPATH, '//android.view.View[@content-desc="点击进入直播间"]')
+        if el0:
+            time.sleep(2)
+    except:
         TouchAction(driver).tap(x=600, y=1268).perform().release()
     time.sleep(3)
     el1 = driver.find_element(By.XPATH, '//android.widget.TextView[@content-desc="消息，按钮"]')
@@ -37,7 +41,7 @@ def send_voice():
     el4.click()
     time.sleep(2)
     el5_times = 0
-    while el5_times < 3:
+    while el5_times < 5:
         try:
             el5 = driver.find_element(By.XPATH, '//android.widget.ImageView[@content-desc="语音"]')
             el5.click()
@@ -47,7 +51,7 @@ def send_voice():
             time.sleep(5)
             break
         except:
-            el7 = driver.find_element(By.XPATH, '//android.widget.Button[@text="仅使用期间允许"]')  # 第一次需授权
+            el7 = driver.find_element(By.XPATH, '//android.widget.Button[contains(@text,"允许")]')  # 第一次需授权
             el7.click()
             time.sleep(2)
             el5_times += 1

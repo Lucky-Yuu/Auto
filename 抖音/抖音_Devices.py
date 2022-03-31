@@ -5,13 +5,13 @@
 
 @Modify Time      @Author    @Version    @Action
 ------------      -------    --------    -----------
-2022/3/20 15:25   xyhu       11.20.3     None
+2022/3/20 15:25   xyhu       20.1.0     None
 '''
 # 该账号需在安全设备登录，即已登录过的设备
 douyin_account = {
-    'username': '17625056788',
-    'password': 'huxinyu123..',
-    'pay_password':'980097'
+    'username': '13951457473',
+    'password': 'fenghuo123456',
+    'pay_password': '980097'
 }
 friend = {
     'username': ''  # 被添加的账号
@@ -27,7 +27,7 @@ desired_caps_a = {
     'unicodeKeyboard': True,
     'resetKeyboard': True,
     'noReset': True,  # 是否重置应用
-    'newCommandTimeout': '180',
+    'newCommandTimeout': '600',
     'androidDeviceReadyTimeout': '3600'
 }
 # 副设备
@@ -41,7 +41,7 @@ desired_caps_b = {
     'unicodeKeyboard': True,
     'resetKeyboard': True,
     'noReset': True,  # 是否重置应用
-    'newCommandTimeout': '180',
+    'newCommandTimeout': '600',
     'androidDeviceReadyTimeout': '3600'
 }
 

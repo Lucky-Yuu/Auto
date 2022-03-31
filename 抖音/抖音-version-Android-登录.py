@@ -8,16 +8,14 @@
 2022/3/25 14:49   xyhu       20.0.0      None
 '''
 import time
-from appium import webdriver
 from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.common.by import By
-import 抖音_Base as DouYin
+import 抖音_login_base as DouYin
 import 抖音_Devices as Devices
 
 
 def login():
-    DouYin.desired_caps['noReset'] = False
-    driver = webdriver.Remote(DouYin.server, DouYin.desired_caps)
+    driver = DouYin.driver
     time.sleep(5)
     el1 = driver.find_element(By.XPATH, '//android.widget.TextView[@text="同意"]')
     el1.click()
