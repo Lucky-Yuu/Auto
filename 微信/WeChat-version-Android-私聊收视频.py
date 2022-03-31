@@ -1,5 +1,5 @@
 """
-@File    :   WeChat-version-Android-HUAWEI-抖音-version-Android-私聊收视频.py
+@File    :   WeChat-version-Android-HUAWEI-私聊收视频.py
 @APPTYPE :   Android
 
 @Modify Time      @Author    @Version    @Action
